@@ -1,0 +1,17 @@
+User-agent: *
+Disallow: /index.php*
+Disallow: /products.php*
+Disallow: /search.php*
+Disallow: /product_details.php*
+Disallow: /products_search.php*
+Disallow: *?page*
+Disallow: /*?sort_ord*
+Disallow: /*?manf*
+Disallow: /*?category_id*
+Disallow: /*search_category_id*
+Disallow: /*search*
+Disallow: /*cart*
+Disallow: /*item_id*
+Disallow: /redirect.php*
+Host: gsw.com.ua
+Sitemap: http://gsw.com.ua/sitemap.xml

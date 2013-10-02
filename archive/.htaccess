@@ -1,0 +1,105 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+
+	RewriteBase /
+        RewriteRule ^(.*)\.htm$ $1.php [R=301,L]
+        RewriteRule ^(.*)\.html$ $1.php [R=301,L]
+		RewriteRule ^(.*)\.html\.php$ $1 [R=301,L] # добавлено 16.11.2011
+		RewriteRule ^(.*)\.htm\.php$ $1 [R=301,L] # добавлено 16.11.2011
+
+
+    RewriteCond %{HTTP_HOST} ^www.gsw.com.ua$ [NC]
+    RewriteRule ^(.*)$ http://gsw.com.ua/$1 [R=301,L]
+
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+    RewriteRule ^index\.php$ http://gsw.com.ua/ [R=301,L]    
+	
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\/\ HTTP/
+    RewriteRule ^index\.php\/$ http://gsw.com.ua/ [R=301,L]    
+
+
+	
+	
+
+    RewriteCond %{REQUEST_URI} ^/chashki_krugki(/?|\.php)
+    RewriteRule (.*) /chashki.php?%{QUERY_STRING} [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/ikoni\.php [OR]
+    RewriteCond %{REQUEST_URI} ^/ikoni\.php\?page=2
+    RewriteRule (.*) /serebryanie_ikoni.php? [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/kresti_ladanki\.php
+    RewriteRule (.*) /kresti_1.php?%{QUERY_STRING} [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/logki_1/?
+    RewriteRule (.*) /logki.php?%{QUERY_STRING} [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/pravoslavnie_izdeliya(/?|\.php)
+    RewriteRule (.*) /serebryanie_ikoni.php? [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/serebryanie_tsepi_brasleti [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_tsepi_brasleti.php [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_tsepi_brasleti\?page=3 [OR]
+    RewriteCond %{REQUEST_URI} ^/tsepi.php [OR]
+    RewriteCond %{REQUEST_URI} ^/tsepi.php\?page=2 [OR]
+    RewriteCond %{REQUEST_URI} ^/tsepochka_inch_dvoynoy_romb_inch_45sm_077479 [OR]
+    RewriteCond %{REQUEST_URI} ^/tsepochka_inch_dvoynoy_romb_inch_45sm_077479.php [OR]
+    RewriteCond %{REQUEST_URI} ^/tsepochka_inch_dvoynoy_romb_inch_55sm_077483 [OR]
+    RewriteCond %{REQUEST_URI} ^/tsepochka_inch_dvoynoy_romb_inch_55sm_077483.php [OR]
+    RewriteCond %{REQUEST_URI} ^/tsepochka_inch_dvoynoy_romb_inch_60sm_077485 [OR]
+    RewriteCond %{REQUEST_URI} ^/tsepochka_inch_dvoynoy_romb_inch_60sm_077485.php [OR]
+    RewriteCond %{REQUEST_URI} ^/tsepochka_inch_sneyk_inch_40sm_077467 [OR]
+    RewriteCond %{REQUEST_URI} ^/tsepochka_inch_sneyk_inch_40sm_077467.php [OR]
+    RewriteCond %{REQUEST_URI} ^/tsepochka_inch_sneyk_inch_45sm_077469 [OR]
+    RewriteCond %{REQUEST_URI} ^/tsepochka_inch_sneyk_inch_45sm_077469.php [OR]
+    RewriteCond %{REQUEST_URI} ^/tsepochka_inch_yakornaya_inch_60sm_077491 [OR]
+    RewriteCond %{REQUEST_URI} ^/tsepochka_inch_yakornaya_inch_60sm_077491.php [OR]
+    RewriteCond %{REQUEST_URI} ^/tsepochka_inch_yakornaya_inch_65sm_077493.php
+    RewriteRule (.*) /serebryanie_tsepochki.php? [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/serebryanie_yuvelirnie_izdeliya [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_yuvelirnie_izdeliya.php [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_yuvelirnie_izdeliya.php?page=10 [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_yuvelirnie_izdeliya.php?page=11 [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_yuvelirnie_izdeliya.php?page=12 [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_yuvelirnie_izdeliya.php?page=13 [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_yuvelirnie_izdeliya.php?page=14 [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_yuvelirnie_izdeliya.php?page=15 [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_yuvelirnie_izdeliya.php?page=16 [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_yuvelirnie_izdeliya.php?page=2 [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_yuvelirnie_izdeliya.php?page=3 [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_yuvelirnie_izdeliya.php?page=4 [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_yuvelirnie_izdeliya.php?page=5 [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_yuvelirnie_izdeliya.php?page=6 [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_yuvelirnie_izdeliya.php?page=7 [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_yuvelirnie_izdeliya.php?page=8 [OR]
+    RewriteCond %{REQUEST_URI} ^/serebryanie_yuvelirnie_izdeliya.php?page=9
+    RewriteRule (.*) /serebryanie_izdeliya.php? [R=301,L]
+
+    RewriteCond %{REQUEST_URI} ^/zolotie_yuvelirnie_izdeliya(/?|\.php)
+    RewriteRule (.*) /zolotie_izdeliya.php?%{QUERY_STRING} [R=301,L]
+    # =================================== #
+
+    RewriteCond %{REQUEST_FILENAME} .php
+    RewriteCond %{REQUEST_URI} !admin
+    RewriteCond %{REQUEST_URI} !search\.php
+    RewriteCond %{REQUEST_URI} !index\.php
+    RewriteCond %{REQUEST_URI} !product_details\.php
+    RewriteCond %{REQUEST_URI} !checkout\.php
+    RewriteCond %{REQUEST_URI} !order_info\.php
+    RewriteCond %{REQUEST_URI} !credit_card_info\.php
+    RewriteCond %{REQUEST_URI} !order_confirmation\.php
+    RewriteCond %{REQUEST_URI} !order_final\.php
+    RewriteCond %{REQUEST_URI} !basket\.php
+    RewriteCond %{REQUEST_URI} !cart_retrieve\.php
+    RewriteCond %{REQUEST_URI} !cart_save\.php
+    RewriteCond %{REQUEST_URI} !article\.php
+    RewriteCond !(/products.php)#$ $1\#
+
+    RewriteRule ^(.*)$  old2new_url.php [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /friendly_url.php [L]
+</IfModule>  
+
